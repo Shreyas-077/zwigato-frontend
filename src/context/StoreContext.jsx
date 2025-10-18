@@ -8,9 +8,8 @@ const StoreContextProvider = (props) => {
     const [cartItems,setCartItems]=useState({});
     const [token,setToken]=useState("")
     const[food_list,setFoodlist]=useState([])
-    // Prefer a Vite-provided env var for the API URL, otherwise use localhost in dev, fall back to production
-    // If you run the frontend with `npm run dev` on your machine, this will point to your local backend.
-    const url = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:4000' : 'https://zwigato-380e.onrender.com')
+    
+    const url = import.meta.env.VITE_API_URL || (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' ? 'http://localhost:4000' : 'https://zwigato-backend-72fo.onrender.com')
 
     const addToCart = async(itemId)=>{
         if(!cartItems[itemId]){
